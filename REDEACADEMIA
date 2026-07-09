@@ -1,0 +1,81 @@
+
+
+
+
+Uma rede de academias precisa gerenciar seus alunos matriculados. Todo aluno possui nome, CPF e data de matrícula. Existem alunos do plano Comum, que pagam mensalidade fixa de R$ 99,90 e têm acesso apenas à sala de musculação, e alunos do plano Personal, que pagam R$ 99,90 mais o valor por hora do personal trainer contratado, multiplicado pela quantidade de horas semanais combinadas. Todo personal trainer possui nome, CREF e valor da hora. Um personal trainer que atender mais de 3 alunos simultaneamente recebe um bônus de R$ 50,00 por aluno excedente ao terceiro, pago pela academia. Um aluno do plano Personal está sempre vinculado a um único personal trainer.
+Parte I: Modele a classe abstrata Aluno (com método abstrato de cálculo da mensalidade) e as subclasses AlunoComum e AlunoPersonal. Modele a classe PersonalTrainer e a classe Academia, que mantém uma coleção de todos os alunos matriculados. Apresente o diagrama UML e a implementação em Java das classes, atributos e construtores.
+Parte II: Forneça os seguintes métodos, indicando em que classe cada um deles reside:
+a) Método para calcular o valor da mensalidade de um aluno qualquer, considerando seu tipo de plano.
+b) Método para calcular o pagamento total que a academia deve a um personal trainer específico, incluindo o bônus por quantidade de alunos além do terceiro.
+c) Método para retornar a lista de personal trainers ordenada do maior para o menor valor total pago pela academia.
+d) Método para identificar quais alunos pagam mensalidade acima da média geral de mensalidades da academia.
+
+
+public class Aluno {
+  private String nome;
+  private String CPF;
+  private String dataMatricula;
+  private double valorMensalidade;
+ public Aluno (string nome, string cpf, String dataMatricula, String valorMensalid vcade  {};
+
+ public abstract void calcularMensalidade() {
+    return valorMensalidade;
+ 
+};
+
+}
+public class Personal {
+   private String nome;
+   private String id;
+   private double valorHora;
+   private int numAlunos;
+   private double salário;
+   private Aluno alunovinculado
+
+ public Personal(String nome, String id, String valorArea, int numAlunos, Aluno aluno){};
+
+ public double calcularSalario(){
+   if (numAlunos > 3){
+       return alunovinculado.getHorassemanais() * valorHora + (numAlunos - 3)
+     } else {
+        return aluno vinculado.getHorassemanas() * valorHora;
+      }
+}
+
+
+}
+public class AlunoComum extends Aluno{
+   
+}
+public class AlunoPersonal extends Aluno{
+   private int horasSemanais;
+   private Personal personalresponsavel;
+
+ public double calcularMensalidade () {
+   return 99 + personalresponsavel.getValorHora()*horasSemanais;
+
+}
+  }
+public class Academia{
+  private ArrayList<Personal> Personal;
+  private List<Alunos> alunos;
+
+
+ public Personal retornarMaisPago() {
+
+    Personal maior = personais.get(0);
+
+    for (Personal p : personais) {
+
+        if (p.calcularPagamento() > maior.calcularPagamento()) {
+            maior = p;
+        }
+    }
+
+    return maior;
+}
+
+
+
+ 
+} 
